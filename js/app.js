@@ -31,7 +31,6 @@ xhr2.onreadystatechange = function () {
     if (xhr2.readyState == 4) {
         if (xhr2.status === 200) {
             var checkbox = JSON.parse(xhr2.responseText);
-            console.log(checkbox);
             document.getElementById("Reliable").innerHTML = checkbox[0].label;
             document.getElementById("Useful").innerHTML = checkbox[1].label;
             document.getElementById("Unique").innerHTML = checkbox[2].label;
@@ -51,7 +50,6 @@ xhr3.onreadystatechange = function () {
     if (xhr3.readyState == 4) {
         if (xhr3.status === 200) {
             var radio = JSON.parse(xhr3.responseText);
-            console.log(radio);
             document.getElementById("satisfied").innerHTML = radio[0].label;
             document.getElementById("someSatisfied").innerHTML = radio[1].label;
             document.getElementById("dissatisfied").innerHTML = radio[2].label;
@@ -76,7 +74,7 @@ userdetails = () => {
         comments: comment
     }]
 
-    if (data[0].name === '' && data[0].email === "") {
+    if (data[0].name === '' || data[0].email === "" || data[0].phoneNumber === "") {
         alert("Please fill the data in the form");
     } else {
         console.log(data);
