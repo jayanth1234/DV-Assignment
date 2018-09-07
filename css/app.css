@@ -1,0 +1,94 @@
+/* Your styles */
+body {
+    background-color: black !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.footer {
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+}
+
+
+.content {
+    margin-top: 2em;
+    color: #eee;
+    font-size: 16px;
+}
+
+#radioSelected > input[type="radio"] {
+  -webkit-appearance: none;
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: red;
+  border-radius: 50%;
+  outline: 0px;
+}
+
+#radioSelected > input[type="radio"]:checked:after {
+    content: '';
+    background-color: white;
+    height: 50%;
+    width: 50%;
+    display: block;
+    margin: 25%;
+    border-radius:50%;
+}
+
+p {
+    color: white;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating {
+    transform: translate(-40%, 1%) rotateY(180deg)
+}
+
+.rating label {
+    display: inline-block;
+    cursor: pointer;
+    width: 50px;
+}
+
+.rating label:before {
+    content : '\f005';
+    font-size: 32px;
+    position: relative;
+    display: block;
+    font-family: fontAwesome;
+    color: #ddd;
+}
+
+.rating label:after {
+    content : '\f005';
+    font-size: 32px;
+    position: absolute;
+    display: block;
+    font-family: fontAwesome;
+    color: #fd0;
+    top: 0;
+    opacity: 0;
+    transition : .5s;
+    text-shadow: 0 2px 5px rgb(246, 241, 241);
+}
+
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~label:after {
+    opacity: 1
+}
+
